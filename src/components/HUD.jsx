@@ -5,55 +5,63 @@ export default function HUD() {
   const progress = Math.round(scroll * 100);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-40">
+    <div
+      className="fixed inset-0 pointer-events-none z-40"
+      style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 40, color: 'white' }}
+    >
       {/* TOP LEFT – SYSTEM TITLE */}
-      <div className="absolute top-6 left-6 space-y-1">
-        <h1 className="text-xl font-bold tracking-wider text-white">
-          THE CSE NEXUS
-        </h1>
-        <p className="text-xs tracking-widest text-cyan-400">
-          Core Knowledge System v1.0
-        </p>
+      <div className="absolute top-6 left-6 space-y-1" style={{ position: 'absolute', top: '1.5rem', left: '1.5rem' }}>
+        <h1 style={{ fontSize: '1.25rem', fontWeight: 700, letterSpacing: '0.2em' }}>THE CSE NEXUS</h1>
+        <p style={{ fontSize: '0.75rem', letterSpacing: '0.3em', color: '#22d3ee' }}>Core Knowledge System v1.0</p>
       </div>
 
       {/* TOP RIGHT – STATUS (PREMIUM) */}
-      <div className="absolute top-6 right-6">
+      <div className="absolute top-6 right-6" style={{ position: 'absolute', top: '1.5rem', right: '1.5rem' }}>
         <div
-          className="
-            px-4 py-2 rounded-xl
-            bg-gradient-to-r from-cyan-400/20 to-blue-500/20
-            backdrop-blur-md
-            border border-cyan-400/30
-            text-cyan-300 text-xs tracking-widest
-            shadow-[0_0_25px_rgba(0,242,255,0.35)]
-          "
+          style={{
+            padding: '0.5rem 1rem',
+            borderRadius: '0.75rem',
+            background: 'linear-gradient(90deg, rgba(34,211,238,0.2), rgba(59,130,246,0.2))',
+            border: '1px solid rgba(34,211,238,0.3)',
+            color: '#67e8f9',
+            fontSize: '0.75rem',
+            letterSpacing: '0.3em',
+            boxShadow: '0 0 25px rgba(0,242,255,0.35)',
+          }}
         >
           PORTFOLIO_NODE_ACTIVE
         </div>
       </div>
 
       {/* BOTTOM LEFT – PROGRESS */}
-      <div className="absolute bottom-6 left-6">
-        <p className="text-xs text-gray-400 tracking-widest mb-1">
+      <div className="absolute bottom-6 left-6" style={{ position: 'absolute', bottom: '1.5rem', left: '1.5rem' }}>
+        <p style={{ fontSize: '0.75rem', color: '#9ca3af', letterSpacing: '0.3em', marginBottom: '0.25rem' }}>
           Journey Progress
         </p>
-        <div className="w-48 h-2 bg-white/10 rounded-full overflow-hidden">
+        <div style={{ width: '12rem', height: '0.5rem', background: 'rgba(255,255,255,0.1)', borderRadius: '999px', overflow: 'hidden' }}>
           <div
-            className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300"
-            style={{ width: `${progress}%` }}
+            style={{
+              height: '100%',
+              width: `${progress}%`,
+              background: 'linear-gradient(90deg, #22d3ee, #3b82f6)',
+              transition: 'width 0.3s ease',
+            }}
           />
         </div>
-        <p className="text-sm text-cyan-300 mt-1 font-mono">
+        <p style={{ fontSize: '0.875rem', color: '#67e8f9', marginTop: '0.25rem', fontFamily: 'monospace' }}>
           {progress}%
         </p>
       </div>
 
       {/* BOTTOM RIGHT – CONTROLS */}
-      <div className="absolute bottom-6 right-6 text-right">
-        <p className="text-xs tracking-widest text-gray-400">
+      <div
+        className="absolute bottom-6 right-6 text-right"
+        style={{ position: 'absolute', bottom: '1.5rem', right: '1.5rem', textAlign: 'right' }}
+      >
+        <p style={{ fontSize: '0.75rem', letterSpacing: '0.3em', color: '#9ca3af' }}>
           [SCROLL] Navigate Academic Timeline
         </p>
-        <p className="text-xs tracking-widest text-gray-400">
+        <p style={{ fontSize: '0.75rem', letterSpacing: '0.3em', color: '#9ca3af' }}>
           [CLICK] Access Deep Revision Vault
         </p>
       </div>

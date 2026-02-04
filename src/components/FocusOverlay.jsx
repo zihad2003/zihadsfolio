@@ -13,6 +13,22 @@ export default function FocusOverlay() {
           exit={{ opacity: 0, x: 120 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="fixed right-0 top-0 h-full w-[460px] bg-black/80 backdrop-blur-xl border-l border-cyan-500/20 p-16 flex flex-col justify-center shadow-[0_0_45px_rgba(0,229,255,0.15)]"
+          style={{
+            position: 'fixed',
+            right: 0,
+            top: 0,
+            height: '100%',
+            width: '460px',
+            background: 'rgba(0,0,0,0.8)',
+            backdropFilter: 'blur(18px)',
+            borderLeft: '1px solid rgba(34,211,238,0.2)',
+            padding: '4rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            color: 'white',
+            boxShadow: '0 0 45px rgba(0,229,255,0.15)',
+          }}
         >
           <div className="flex items-center gap-4 mb-2">
             <span className="h-[1px] w-8 bg-cyan-400" />

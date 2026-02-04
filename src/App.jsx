@@ -22,7 +22,10 @@ export default function App() {
   }, [scroll, setScroll]);
 
   return (
-    <div className="w-full h-full">
+    <div
+      className="w-full h-full"
+      style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}
+    >
       <Atrium />
       <HUD />
       <FocusOverlay />
