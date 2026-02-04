@@ -11,13 +11,16 @@ export default function Monolith({ course }) {
   const [hovered, setHover] = useState(false);
 
   useFrame((state) => {
+    if (!mesh.current) return;
     const t = state.clock.getElapsedTime();
     // Heavy, intentional breathing
     const scaleFactor = isFocused ? 1.18 : (hovered ? 1.08 : 1.0);
     mesh.current.scale.setScalar(THREE.MathUtils.lerp(mesh.current.scale.x, scaleFactor, 0.08));
-    
+
     // Internal pulse
-    mesh.current.material.emissiveIntensity = 0.6 + Math.sin(t * 1.6) * 0.25;
+    if (mesh.current.material) {
+      mesh.current.material.emissiveIntensity = 0.6 + Math.sin(t * 1.6) * 0.25;
+    }
   });
 
   return (
